@@ -45,7 +45,7 @@ public class User implements Serializable {
 
     private String endereco;
 
-    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY,mappedBy="user")
     private List<Contato> contatoList=new ArrayList<Contato>();
 
     @ApiModelProperty(hidden = true)
