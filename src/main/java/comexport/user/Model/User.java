@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "usuario")
 public class User implements Serializable {
 
     private static  final  long serialVersionUID = 1L;
@@ -21,7 +21,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment",strategy = "increment")
-    @Column(name = "user_id")
+    @Column(name = "usuario_id")
     private long id;
 
     @Column(name = "nome_usuario",nullable = false, updatable= false)
@@ -45,7 +45,7 @@ public class User implements Serializable {
 
     private String endereco;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy="user")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy="usuario")
     private List<Contato> contatoList=new ArrayList<Contato>();
 
     @ApiModelProperty(hidden = true)
