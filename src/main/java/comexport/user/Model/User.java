@@ -44,8 +44,7 @@ public class User implements Serializable {
     private long idade;
 
     private String endereco;
-
-    @JoinColumn(name = "contato_id")
+    
     @OneToMany(fetch = FetchType.LAZY,mappedBy="user")
     private List<Contato> contatoList=new ArrayList<Contato>();
 
