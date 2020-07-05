@@ -21,7 +21,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment",strategy = "increment")
-    @Column(name = "usuario_id")
+    @Column(name = "user_id")
     private long id;
 
     @Column(name = "nome_usuario",nullable = false, updatable= false)
@@ -45,7 +45,7 @@ public class User implements Serializable {
 
     private String endereco;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy="usuario")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy="user")
     private List<Contato> contatoList=new ArrayList<Contato>();
 
     @ApiModelProperty(hidden = true)

@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Table(name = "contato")
 public class Contato implements Serializable {
     private static  final  long serialVersionUID = 1L;
-
+    
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment",strategy = "increment")
@@ -20,7 +20,7 @@ public class Contato implements Serializable {
 
     private String detalhe_contato;
 
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "user_id")
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     User user;
 
