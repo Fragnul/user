@@ -44,8 +44,8 @@ public class User implements Serializable {
     private long idade;
 
     private String endereco;
-    
-    @OneToMany(fetch = FetchType.LAZY,mappedBy="user")
+
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Contato> contatoList=new ArrayList<Contato>();
 
     @ApiModelProperty(hidden = true)
