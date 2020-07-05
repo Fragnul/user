@@ -1,5 +1,7 @@
 package comexport.user.Model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -10,6 +12,7 @@ public class Contato implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "contato_id")
     private long id;
 
