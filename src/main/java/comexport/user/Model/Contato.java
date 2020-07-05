@@ -9,10 +9,10 @@ import java.io.Serializable;
 @Table(name = "contato")
 public class Contato implements Serializable {
     private static  final  long serialVersionUID = 1L;
-
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment",strategy = "increment")
     @Column(name = "contato_id")
     private long id;
 

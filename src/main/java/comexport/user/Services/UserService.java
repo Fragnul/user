@@ -74,6 +74,9 @@ public class UserService {
         User emailDuplicado = userRepository.findByEmail(user.getEmail());
 
         if (emailDuplicado != null){
+            if (user.getId() == emailDuplicado.getId()){
+                return true;
+            }
             return false;
         }
 
